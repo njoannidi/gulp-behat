@@ -1,6 +1,2 @@
 .idea/
-.idea/workspace.xml
-node_modules
-gulpfile.js
-behat-commands.docx
-behat-commands.txt
+node_modules/
