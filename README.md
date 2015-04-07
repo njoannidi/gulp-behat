@@ -34,7 +34,7 @@ gulp.task('behat', function() {
 
 // Example 3: Error Catching and Streaming Output
 gulp.task('behat', function() {
-    options = {format: 'pretty', colors: ''}
+    options = {format: 'pretty', colors: ''};
 
 	gulp.src('./behat/**/*.php')
     .pipe(behat(options))
@@ -44,7 +44,7 @@ gulp.task('behat', function() {
         })
     .on('error', function(data)
         {
-            handleError(data.toString('utf8');
+            handleError(data.toString('utf8'));
         });
 });
 
