@@ -1,6 +1,6 @@
 {
   "name": "gulp-behat-stream",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Behat plugin for Gulp - Streaming",
   "main": "index.js",
   "dependencies": {

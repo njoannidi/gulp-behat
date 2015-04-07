@@ -12,7 +12,7 @@ module.exports = (opts) ->
 		if os.platform is 'win32'
 			behatCommand = behatCommand.replace /[/]/g, '\\'
 
-	if typeof behatCommand is not 'string' 
+	if typeof behatCommand is not 'string'
 		throw new gutil.PluginError 'gulp-behat-stream', 'Invalid Behat Command. Expecting string.'
 
 	behatOpts = []
@@ -23,13 +23,13 @@ module.exports = (opts) ->
 		else
 			behatOpts.push "--#{option}"
 
-	through (file) -> 
+	through (file) ->
 			this.queue file
 		, ->
 			stream = this
 			behat = spawn behatCommand, behatOpts
-			behat.stdout.on 'message', (chunk) ->
-				stream.emit 'data', chunk
+			behat.stdout.on 'data', (chunk) ->
+				stream.emit 'message', chunk
 
 			behat.stderr.on 'data', (chunk) ->
 				stream.emit 'error', chunk

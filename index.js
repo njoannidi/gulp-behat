@@ -38,8 +38,8 @@
       var behat, stream;
       stream = this;
       behat = spawn(behatCommand, behatOpts);
-      behat.stdout.on('message', function(chunk) {
-        return stream.emit('data', chunk);
+      behat.stdout.on('data', function(chunk) {
+        return stream.emit('message', chunk);
       });
       return behat.stderr.on('data', function(chunk) {
         return stream.emit('error', chunk);
