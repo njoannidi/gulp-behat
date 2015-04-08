@@ -11,6 +11,9 @@
 
   module.exports = function(opts) {
     var behatCommand, behatOpts, option, value;
+    if (typeof opts === 'undefined') {
+      opts = {};
+    }
     if (opts.exec) {
       behatCommand = opts.exec;
       delete opts.exec;

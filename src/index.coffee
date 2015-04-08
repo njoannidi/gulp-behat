@@ -4,6 +4,8 @@ spawn = require('child_process').spawn
 through = require 'through'
 
 module.exports = (opts) ->
+	opts = {} if typeof opts is 'undefined'
+
 	if opts.exec
 		behatCommand = opts.exec
 		delete opts.exec
@@ -23,7 +25,7 @@ module.exports = (opts) ->
 		else
 			behatOpts.push "--#{option}"
 
-	through (file) ->
+	return through (file) ->
 			this.queue file
 		, ->
 			stream = this
